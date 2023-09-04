@@ -1,5 +1,6 @@
 package UI;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 
 public class TelaInicial extends JFrame {
@@ -19,5 +20,6 @@ public class TelaInicial extends JFrame {
         this.setLocationRelativeTo(null);// aparece no meio da aplicacao
         this.setTitle("Projeto Laboratorio 1");// titulo do projeto
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// finalizacao do programa apos o termino
+        this.add(new JButton());
     }
 }
