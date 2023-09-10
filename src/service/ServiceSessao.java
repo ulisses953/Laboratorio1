@@ -3,10 +3,10 @@ package service;
 import model.Sessao;
 import model.User;
 
-public class ServiceSessao {
+public class ServiceSessao extends Exception{
     private Sessao sessao = new Sessao();
 
-    public User ReservarCadeira(int coluna, char linha, User user){
+    public User ReservarCadeira(int coluna, char linha, User user) throws Exception{
         User[][] cadeiras = sessao.getCadeiras();
 
         cadeiras[ValidatorColuna(coluna)][validatorLinha(linha)] = user;
@@ -16,10 +16,8 @@ public class ServiceSessao {
         return cadeiras[ValidatorColuna(linha)][validatorLinha(linha)];
     }
     
-    
-
-    protected int validatorLinha(char linha){
-         int intLinha = (int)linha;
+    protected int validatorLinha(char linha) throws Exception{
+        int intLinha = (int)linha;
         
         if(intLinha > 90){
             intLinha -= 97;
@@ -31,7 +29,7 @@ public class ServiceSessao {
             return intLinha;
         }
         else{ 
-            return -1;
+            throw new Exception("valor invalido");
         }
     }
 

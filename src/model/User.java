@@ -3,8 +3,8 @@ package model;
 public class User {
     private long id;
     private String nome;
-    private String email;
-    private String senha;
+    private String cpf;
+    private String idade;
 
     public long getId() {
         return id;
@@ -18,36 +18,16 @@ public class User {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    public String getEmail() {
-        return email;
+    public String getCpf() {
+        return cpf;
     }
-    public void setEmail(String email) {
-        this.email = email;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
-    public String getSenha() {
-        return senha;
+    public String getIdade() {
+        return idade;
     }
-    public void setSenha(String senha) {
-        this.senha = senha;
+    public void setIdade(String idade) {
+        this.idade = idade;
     }
-
-    @Override
-    public String toString() {
-    return "User{" +
-                "id=" + id +
-                ", nome='" + nome + '\'' +
-                ", email='" + email + '\'' +
-                ", senha='" + senha + '\'' +
-                '}';
-    }
-    public User(long id, String nome, String email, String senha) {
-        this.id = id;
-        this.nome = nome;
-        this.email = email;
-        this.senha = senha;
-    }
-    public User() {
-    }
-
-    
 }
