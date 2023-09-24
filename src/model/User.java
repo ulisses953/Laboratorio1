@@ -30,4 +30,17 @@ public class User {
     public void setIdade(String idade) {
         this.idade = idade;
     }
+    public User(long id, String nome, String cpf, String idade) {
+        this.id = id;
+        this.nome = nome;
+        this.cpf = cpf;
+        this.idade = idade;
+    }
+    public User() {
+    }
+    public User(long id, String nome) {
+        this.id = id;
+        this.nome = nome;
+    }
+    
 }

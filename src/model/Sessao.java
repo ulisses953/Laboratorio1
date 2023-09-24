@@ -6,7 +6,7 @@ public class Sessao {
 
     private long id;
     private User[][] cadeiras = new User[colunas][linhas];
-    private String filmName;
+    private String NomeDoFilme;
     private String idade;
 
     public long getId() {
@@ -27,17 +27,17 @@ public class Sessao {
     public void setCadeiras(User[][] cadeiras) {
         this.cadeiras = cadeiras;
     }
-    public String getFilmName() {
-        return filmName;
-    }
-    public void setFilmName(String filmName) {
-        this.filmName = filmName;
-    }
     public String getIdade() {
         return idade;
     }
     public void setIdade(String idade) {
         this.idade = idade;
+    }
+    public String getNomeDoFilme() {
+        return NomeDoFilme;
+    }
+    public void setNomeDoFilme(String nomeDoFilme) {
+        NomeDoFilme = nomeDoFilme;
     }
     
 
