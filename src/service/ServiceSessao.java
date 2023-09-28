@@ -124,5 +124,31 @@ public class ServiceSessao extends Exception {
         User[][] cadeiras = sessao.getCadeiras();
         return cadeiras[coluna][linha] == null;
     }
+
+    public int cadeirasDisponivel(Sessao sessao){
+        User[][] cadeiras = sessao.getCadeiras();
+        int cadeirasDisponivel = 0;
+        for(int i=0; i<cadeiras.length;i++) {
+            for(int a=0 ; a<cadeiras[i].length;a++) {
+                if(cadeiras[i][a] == null){
+                    cadeirasDisponivel++;
+                }
+            }
+        }
+        return cadeirasDisponivel;
+    }
+
+    public int cadeirasNaoDisponivel(Sessao sessao){
+          User[][] cadeiras = sessao.getCadeiras();
+        int cadeirasNaoDisponivel = 0;
+        for(int i=0; i<cadeiras.length;i++) {
+            for(int a=0 ; a<cadeiras[i].length;a++) {
+                if(cadeiras[i][a] != null){
+                    cadeirasNaoDisponivel++;
+                }
+            }
+        }
+        return cadeirasNaoDisponivel;
+    }
      
 }
