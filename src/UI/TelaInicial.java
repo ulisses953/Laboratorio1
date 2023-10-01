@@ -30,7 +30,9 @@ public class TelaInicial {
                 System.out.println("4- mapa");
                 System.out.println("5- cadeiras disponiveis");
                 System.out.println("6- cadeiras nao disponiveis");
-                System.out.println("7- sair");
+                System.out.println("7- Ver Usuario");
+
+                System.out.println("8- sair");
 
                 int value = sc.nextInt();
 
@@ -68,6 +70,7 @@ public class TelaInicial {
                         linha = sc.next();
 
                         serviceSessao.cancelar(coluna, linha.charAt(0), sessao);
+                        break;
 
                     case 3:
                         System.out.println("digite a coluna : ");
@@ -80,7 +83,7 @@ public class TelaInicial {
 
                         System.out.print("ID: ");
                         id = sc.nextLong();
-                        sc.nextLine(); // Limpa o buffer
+                        sc.nextLine();
 
                         System.out.print("Nome: ");
                         nome = sc.nextLine();
@@ -93,16 +96,29 @@ public class TelaInicial {
                         idade = sc.nextLine();
 
                         serviceSessao.alterar(coluna, linha.charAt(0), new User(id, nome, cpf, idade), sessao);
+                        break;
 
                     case 4:
-                            
+                        serviceSessao.geraMapa(sessao);
+                        break;
                     case 5:
                         System.err.println(serviceSessao.cadeirasDisponivel(sessao));
-                        
+                        break;
                     case 6:
-                        System.err.println(serviceSessao.cadeirasNaoDisponivel(sessao)); 
+                        System.err.println(serviceSessao.cadeirasNaoDisponivel(sessao));
+                        break;
+                    case 7:
+                        System.out.println("digite a coluna : ");
+                        coluna = sc.nextInt();
 
+                        System.out.println("digite a linha : ");
+                        linha = sc.next();
+
+                        System.out.println(serviceSessao.informacoesUsuario(sessao, coluna, linha.charAt(0)));
+                        
+                        break;
                     default:
+                        sair = true;
                         break;
                 }
 

@@ -42,5 +42,10 @@ public class User {
         this.id = id;
         this.nome = nome;
     }
+    @Override
+    public String toString() {
+        return "User [id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", idade=" + idade + "]";
+    }
+    
     
 }

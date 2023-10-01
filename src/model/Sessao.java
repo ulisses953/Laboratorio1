@@ -1,11 +1,11 @@
 package model;
 
 public class Sessao {
-    public static final int colunas = 14;
-    public static final int linhas = 12; 
+    public static final int COLUNA = 14;
+    public static final int LINHA = 12; 
 
     private long id;
-    private User[][] cadeiras = new User[colunas][linhas];
+    private User[][] cadeiras = new User[COLUNA][LINHA];
     private String NomeDoFilme;
     private String idade;
 
@@ -14,12 +14,6 @@ public class Sessao {
     }
     public void setId(long id) {
         this.id = id;
-    }
-    public static int getColunas() {
-        return colunas;
-    }
-    public static int getLinhas() {
-        return linhas;
     }
     public User[][] getCadeiras() {
         return cadeiras;
